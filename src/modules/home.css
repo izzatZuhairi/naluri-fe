@@ -1,18 +1,35 @@
 .homepage {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .top-part {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    /* text-align: center; */
-    /* background-color: blue; */
-    background-image: url("../assets/starry.jpg");
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  /* text-align: center; */
+  /* background-color: blue; */
+  background-image: url("../assets/starry.jpg");
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-img-animation {
+    animation: sun-spin infinite 150s linear;
+  }
+}
+
+@keyframes sun-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* .bottom-part {
@@ -28,62 +45,74 @@
 } */
 
 .sun-img {
-    position: absolute;
-    left: -400px;
+  position: absolute;
+  left: -400px;
 }
 
 .pi-img-container {
-    display: flex;
-    position: relative;
-    /* align-items: center; */
-    text-align: center;
-    width: 100%;
-    /* bottom: 100px; */
-    left: 260px;
+  display: flex;
+  position: relative;
+  /* align-items: center; */
+  text-align: center;
+  width: 100%;
+  /* bottom: 100px; */
+  left: 260px;
 }
 
 .pi-img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .pi-img-cont {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .h3-top {
-    font-size: 60px;
-    color: rgb(122, 238, 126);
+  font-size: 60px;
+  color: rgb(122, 238, 126);
+}
+
+.div-top {
+  font-size: 60px;
+  color: rgb(122, 238, 126);
+  line-break: anywhere;
+}
+
+.div-top-cont {
+  display: flex;
+  max-width: 60%;
+  flex-wrap: wrap;
 }
 
 .h3-top-cont {
-    margin-left: 20px;
-    margin-bottom: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .two-pi-r {
-    height: 100%;
-    font-size: 110px;
-    font-weight: 600;
-    color: rgb(122, 238, 126);
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-}   
+  height: 100%;
+  font-size: 110px;
+  font-weight: 600;
+  color: rgb(122, 238, 126);
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
 
 .cir-sun {
-    font-size: 60px;
-    margin-left: 20px;
+  font-size: 60px;
+  margin-left: 20px;
 }
 
 .footer-btn {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 
 .MuiButton-root.button {
-    margin-right: 20px;
+  margin-right: 20px;
 }

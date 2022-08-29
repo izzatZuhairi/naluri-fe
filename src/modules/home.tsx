@@ -7,13 +7,13 @@ import axios from "axios";
 import BigNumber from "bignumber.js";
 
 export const Home = () => {
-  const [piVal, setPiVal] = useState<BigNumber>(new BigNumber(0));
+  const [piVal, setPiVal] = useState<string>("0");
   const radiusOfTheSun = "696340";
 
   useEffect(() => {
-    if (piVal.toNumber() === 0) {
+    if (BigNumber(piVal).toNumber() === 0) {
       axios.get("http://localhost:4500/api/calc-pi-async").then((val) => {
-        setPiVal(val?.data);
+        setPiVal(val?.data?.data);
       });
     }
   }, []);
@@ -21,25 +21,26 @@ export const Home = () => {
   const calcSunCir = (rad: string) => {
     const radius = new BigNumber(rad);
     const cirSun = radius.times(piVal).times(2);
-    return cirSun.toFormat(4);
+    return cirSun.toFormat(12);
   };
 
   return (
     <div className="homepage">
       <div className="top-part">
-        <div className="sun-img">
+        <div className="sun-img sun-img-animation">
           <img src={sun} />
         </div>
         <div className="info-cont">
           <div className="pi-img-container">
             <div className="pi-img-cont">
-              <img src={pi} className="pi-img" />
+              <img src={pi} className="pi-img " />
             </div>
             <div className="h3-top-cont">
               <h3 className="h3-top">~</h3>
             </div>
-            <div>
-              <h3 className="h3-top">{piVal.toString()}</h3>
+            <div className="div-top-cont">
+              {/* <h3 className="h3-top">{piVal}</h3> */}
+              <div className="div-top">{piVal}</div>
             </div>
           </div>
           <div className="pi-img-container">
@@ -68,7 +69,7 @@ export const Home = () => {
                   axios
                     .get("http://localhost:4500/api/calc-pi-async")
                     .then((val) => {
-                      setPiVal(val?.data);
+                      setPiVal(val?.data?.data);
                     });
                 }
               });
@@ -83,7 +84,8 @@ export const Home = () => {
               axios
                 .get("http://localhost:4500/api/calc-pi-async")
                 .then((val) => {
-                  setPiVal(val?.data);
+                  console.log(val, "value????");
+                  setPiVal(val?.data?.data);
                 });
             }}
           >
