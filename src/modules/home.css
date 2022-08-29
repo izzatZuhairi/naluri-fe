@@ -4,12 +4,86 @@
 }
 
 .top-part {
-    height: 70%;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    /* text-align: center; */
     /* background-color: blue; */
     background-image: url("../assets/starry.jpg");
 }
 
-.bottom-part {
+/* .bottom-part {
     height: 30%;
     background-color: beige;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+} */
+
+/* .info-cont {
+
+} */
+
+.sun-img {
+    position: absolute;
+    left: -400px;
+}
+
+.pi-img-container {
+    display: flex;
+    position: relative;
+    /* align-items: center; */
+    text-align: center;
+    width: 100%;
+    /* bottom: 100px; */
+    left: 260px;
+}
+
+.pi-img {
+    width: 100px;
+    height: 100px;
+}
+
+.pi-img-cont {
+    display: flex;
+    align-items: center;
+}
+
+.h3-top {
+    font-size: 60px;
+    color: rgb(122, 238, 126);
+}
+
+.h3-top-cont {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.two-pi-r {
+    height: 100%;
+    font-size: 110px;
+    font-weight: 600;
+    color: rgb(122, 238, 126);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}   
+
+.cir-sun {
+    font-size: 60px;
+    margin-left: 20px;
+}
+
+.footer-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.MuiButton-root.button {
+    margin-right: 20px;
 }
