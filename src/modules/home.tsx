@@ -11,12 +11,16 @@ export const Home = () => {
   const radiusOfTheSun = "696340";
 
   useEffect(() => {
-    if (BigNumber(piVal).toNumber() === 0) {
-      axios.get("http://localhost:4500/api/calc-pi-async").then((val) => {
-        setPiVal(val?.data?.data);
-      });
+    if (piVal === "0") {
+      axios
+        .get("http://localhost:4500/api/calc-pi-async", {
+          params: { keepVal: true },
+        })
+        .then((val) => {
+          setPiVal(val?.data?.data);
+        });
     }
-  }, []);
+  }, [piVal]);
 
   const calcSunCir = (rad: string) => {
     const radius = new BigNumber(rad);
@@ -84,7 +88,7 @@ export const Home = () => {
               axios
                 .get("http://localhost:4500/api/calc-pi-async")
                 .then((val) => {
-                  console.log(val, "value????");
+                  // console.log(val, "value????");
                   setPiVal(val?.data?.data);
                 });
             }}
